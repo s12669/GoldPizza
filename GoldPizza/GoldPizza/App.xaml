@@ -4,16 +4,16 @@
              x:Class="GoldPizza.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
-            <Color x:Key="PrimaryDark">#1976D2</Color>
-            <Color x:Key="Accent">#96d1ff</Color>
-            <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
-            <Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
-            <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
+            <Color x:Key="Primary">#FFF200</Color>
+            <Color x:Key="PrimaryDark">#D1C604</Color>
+            <Color x:Key="Accent">#F9F277</Color>
+            <Color x:Key="LightBackgroundColor">#FAFF84</Color>
+            <Color x:Key="DarkBackgroundColor">#CACE5F</Color>
+            <Color x:Key="MediumGrayTextColor">#4D4D4D</Color>
             <Color x:Key="LightTextColor">#999999</Color>
 
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryDark}" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
         </ResourceDictionary>
