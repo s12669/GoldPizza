@@ -14,27 +14,13 @@ namespace GoldPizza.Services
 
         public MockDataStore()
         {
-            this.pizzerie = new List<Pizzeria>();
-            var mockPizzerie = new List<Pizzeria>
-            {
-                new Pizzeria { Id = Guid.NewGuid().ToString(), Nazwa = "Salsa", Ocena="5", Opis="Bardzo dobra pizza, wysokiej jakości składniki, dobry kandydat na miano Złotej Pizzy." },
-                new Pizzeria { Id = Guid.NewGuid().ToString(), Nazwa = "Dragon Pizza", Ocena="4", Opis="Zwykle dobra pizza, czasami jednak zdarza się bardzo tłusta. Bardzo dobry kurczak." },
-                new Pizzeria { Id = Guid.NewGuid().ToString(), Nazwa = "Domino's", Ocena="4", Opis="Pizza bardzo dobra, ale droga. Niespecjalnie dobry sos pomidorowy nadrabiają możliwością wyboru sosu barbecue." },
-                new Pizzeria { Id = Guid.NewGuid().ToString(), Nazwa = "Telepizza", Ocena = "3", Opis="Podobnie jak Domino's, sieciówka opierająca się na promocjach. Dobry sos jalapeno, średniej jakości składniki." },
-                new Pizzeria { Id = Guid.NewGuid().ToString(), Nazwa = "Gusto notte", Ocena = "4", Opis="Pizza w sumie niespecjalnie dobra, ale jakoś tak je się ją łatwo i przyjemnie. Pizzeria nocna." },
-                new Pizzeria { Id = Guid.NewGuid().ToString(), Nazwa = "Pizzeria PRL", Ocena = "2", Opis="Niedobry sos, co sprawia, że cała pizza nie jest zbyt smaczna." },
-            };
-
-            foreach (var pizzeria in mockPizzerie)
-            {
-                this.pizzerie.Add(pizzeria);
-            }
+            pizzerie = DatabaseHelper.GetAll();
         }
 
         public async Task<bool> AddItemAsync(Pizzeria pizzeria)
         {
             pizzerie.Add(pizzeria);
-           // DatabaseHelper.Insert(ref Pizzeria);
+            DatabaseHelper.Insert(ref pizzeria);
 
             return await Task.FromResult(true);
         }
